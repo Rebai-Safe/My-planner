@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+@use "assets/colors" as *;
+@use "assets/main-theme";
+
+//scrolling styling
+::-webkit-scrollbar {
+  width: 5.5px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: $main-color;
+}
+
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.clickable {
+  cursor: pointer;
+}
+.text-accent{
+  color: $accent-color;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.items-container{
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 10px;
+  width: 70%;
+  border: 1px solid #eee;
+}
+
+.title{
+  color: $accent-color;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.empty-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $accent-color;
+  font-weight: bold;
+  font-size: 22px;
+}
+
