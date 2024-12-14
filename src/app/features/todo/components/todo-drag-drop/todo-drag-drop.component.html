@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="row">
+    <div class="todo col-md-6 col-lg-3">
+      <!-- todo -->
+      <div class="box-header">
+<<<<<<< HEAD
+        To do
+=======
+        To do {{todo.length > 0 ? '(' +todo.length +')': ''}}
+>>>>>>> 1827211056fe2640aede6378643f4469a89bced7
+      </div>
+      <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todo"
+        [cdkDropListConnectedTo]="[inProgressList, doneList, cancelledList]"
+        class="tasks-list"
+        (cdkDropListDropped)="drop($event, 0)">
+        <div class="task-box" *ngFor="let item of todo" cdkDrag>
+          {{item.title}}
+          {{item.description}}
+          <div>
+            <i class="fa-solid fa-trash text-danger clickable" (click)="deleteToDo(item)"></i>
+            <i class="fa-solid fa-pen text-accent ms-4 clickable" (click)="goToUpdateTodo(item)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="in-progress col-md-6 col-lg-3">
+      <!-- in progress -->
+      <div class="box-header">
+<<<<<<< HEAD
+        In progress
+=======
+        In progress {{inProgress.length > 0 ? '(' +inProgress.length +')': ''}}
+>>>>>>> 1827211056fe2640aede6378643f4469a89bced7
+      </div>
+      <div
+        cdkDropList
+        #inProgressList="cdkDropList"
+        [cdkDropListData]="inProgress"
+        [cdkDropListConnectedTo]="[todoList, doneList,cancelledList]"
+        class="tasks-list"
+        (cdkDropListDropped)="drop($event, 1)">
+        <div class="task-box" *ngFor="let item of inProgress;" cdkDrag>{{item.title}}
+          <div>
+            <i class="fa-solid fa-trash text-danger clickable" (click)="deleteToDo(item)"></i>
+            <i class="fa-solid fa-pen text-accent ms-4 clickable" (click)="goToUpdateTodo(item)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="done col-md-6 col-lg-3">
+      <!-- Done -->
+      <div class="box-header">
+<<<<<<< HEAD
+        Done
+=======
+        Done {{done.length > 0 ? '(' +done.length +')': ''}}
+>>>>>>> 1827211056fe2640aede6378643f4469a89bced7
+      </div>
+      <div
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="[todoList, inProgressList, cancelledList]"
+        class="tasks-list"
+        (cdkDropListDropped)="drop($event, 2)">
+        <div class="task-box" *ngFor="let item of done;" cdkDrag>{{item.title}}
+          <div>
+            <i class="fa-solid fa-trash text-danger clickable" (click)="deleteToDo(item)"></i>
+            <i class="fa-solid fa-pen text-accent ms-4 clickable" (click)="goToUpdateTodo(item)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cancelled col-md-6 col-lg-3">
+      <!-- Cancelled -->
+      <div class="box-header">
+<<<<<<< HEAD
+        Cancelled
+=======
+        Cancelled {{cancelled.length > 0 ? '(' +cancelled.length +')': ''}}
+>>>>>>> 1827211056fe2640aede6378643f4469a89bced7
+      </div>
+
+      <div
+        cdkDropList
+        #cancelledList="cdkDropList"
+        [cdkDropListData]="cancelled"
+        [cdkDropListConnectedTo]="[todoList, inProgressList, doneList]"
+        class="tasks-list"
+        (cdkDropListDropped)="drop($event, 3)">
+        <div class="task-box" *ngFor="let item of cancelled;" cdkDrag>{{item.title}}
+          <div>
+            <i class="fa-solid fa-trash text-danger clickable" (click)="deleteToDo(item)"></i>
+            <i class="fa-solid fa-pen text-accent ms-4 clickable" (click)="goToUpdateTodo(item)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
